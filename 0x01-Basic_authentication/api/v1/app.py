@@ -17,9 +17,9 @@ CORS(app, resources={r"/api/v1/*": {"origins": "*"}})
 auth = os.getenv('AUTH_TYPE')
 
 auth_repo = {
-    'auth': Auth,
-    'basic_auth': BasicAuth
-}
+        'auth': Auth,
+        'basic_auth': BasicAuth
+        }
 
 if auth:
     try:
@@ -37,10 +37,10 @@ def filter():
         return
     path = request.path
     excluded_paths = [
-        '/api/v1/status/',
-        '/api/v1/unauthorized/',
-        '/api/v1/forbidden/'
-    ]
+            '/api/v1/status/',
+            '/api/v1/unauthorized/',
+            '/api/v1/forbidden/'
+            ]
     if auth.require_auth(path, excluded_paths) is False:
         return
 

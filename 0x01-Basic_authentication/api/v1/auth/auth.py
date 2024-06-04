@@ -14,8 +14,8 @@ class Auth:
     """
 
     def require_auth(
-        self, path: str, excluded_paths: List[str]
-    ) -> bool:
+            self, path: str, excluded_paths: List[str]
+            ) -> bool:
         """
         authentication boolean
         """
