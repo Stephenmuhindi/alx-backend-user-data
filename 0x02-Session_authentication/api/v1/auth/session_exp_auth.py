@@ -27,9 +27,9 @@ class SessionExpAuth(SessionAuth):
         if sess_id is None:
             return None
         value = {
-            'user_id': user_id,
-            'created_at': datetime.datetime.now()
-        }
+                'user_id': user_id,
+                'created_at': datetime.datetime.now()
+                }
         self.user_id_by_session_id[sess_id] = value
         return sess_id
 

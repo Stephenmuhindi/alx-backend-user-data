@@ -29,8 +29,8 @@ class SessionDBAuth(SessionExpAuth):
         """ session dictionary from object here """
         UserSession.load_from_file()
         attr = {
-            'session_id': session_id
-        }
+                'session_id': session_id
+                }
         user_sessions = UserSession.search(attr)
         user_id = None
 
@@ -68,7 +68,7 @@ class SessionDBAuth(SessionExpAuth):
         UserSession.load_from_file()
         user_sessions = UserSession.search({
             'session_id': sess_id
-        })
+            })
         if not user_sessions:
             return False
         user_session = user_sessions[0]

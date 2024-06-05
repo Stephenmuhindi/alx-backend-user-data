@@ -24,12 +24,12 @@ def get_auth():
     from api.v1.auth.session_db_auth import SessionDBAuth
 
     auth_repo = {
-        'auth': Auth,
-        'basic_auth': BasicAuth,
-        'session_auth': SessionAuth,
-        'session_exp_auth': SessionExpAuth,
-        'session_db_auth': SessionDBAuth
-    }
+            'auth': Auth,
+            'basic_auth': BasicAuth,
+            'session_auth': SessionAuth,
+            'session_exp_auth': SessionExpAuth,
+            'session_db_auth': SessionDBAuth
+            }
 
     return auth_repo
 
@@ -48,11 +48,11 @@ def filter():
         return
     path = request.path
     excluded_paths = [
-        '/api/v1/status/',
-        '/api/v1/unauthorized/',
-        '/api/v1/forbidden/',
-        '/api/v1/auth_session/login/'
-    ]
+            '/api/v1/status/',
+            '/api/v1/unauthorized/',
+            '/api/v1/forbidden/',
+            '/api/v1/auth_session/login/'
+            ]
     if auth.require_auth(path, excluded_paths) is False:
         return
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-module defined hun
+module defined honey
 """
 from flask import abort, request
 from api.v1.auth.auth import Auth
@@ -26,7 +26,7 @@ class SessionAuth(Auth):
         return session_id
 
     def user_id_for_session_id(self, session_id: str = None) -> str:
-        """ userid of the session """
+        """ user of the session """
         if session_id is None:
             return None
         if type(session_id) != str:
@@ -41,7 +41,7 @@ class SessionAuth(Auth):
         return user
 
     def destroy_session(self, request=None):
-        """ mem clear """
+        """ thanos snapped """
         if request is None:
             return False
         sess_id = self.session_cookie(request)

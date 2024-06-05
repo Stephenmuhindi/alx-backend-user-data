@@ -15,8 +15,8 @@ class BasicAuth(Auth):
     """
 
     def extract_base64_authorization_header(
-        self, authorization_header: str
-    ) -> str:
+            self, authorization_header: str
+            ) -> str:
         """
         extraction happens here
         """
@@ -32,8 +32,8 @@ class BasicAuth(Auth):
         return comp[1]
 
     def decode_base64_authorization_header(
-        self, base64_authorization_header: str
-    ) -> str:
+            self, base64_authorization_header: str
+            ) -> str:
         """
         decoder function
         """
@@ -44,8 +44,8 @@ class BasicAuth(Auth):
 
         try:
             res = base64.b64decode(
-                bytes(base64_authorization_header, 'utf-8')
-            )
+                    bytes(base64_authorization_header, 'utf-8')
+                    )
             res = res.decode('utf-8')
 
         except Exception as e:
@@ -54,8 +54,8 @@ class BasicAuth(Auth):
         return res
 
     def extract_user_credentials(
-        self, decoded_base64_authorization_header: str
-    ) -> Tuple[str, str]:
+            self, decoded_base64_authorization_header: str
+            ) -> Tuple[str, str]:
         """
         turple(str rep )
         """
@@ -71,8 +71,8 @@ class BasicAuth(Auth):
         return (email, passwd)
 
     def user_object_from_credentials(
-        self, user_email: str, user_pwd: str
-    ) -> TypeVar('User'):
+            self, user_email: str, user_pwd: str
+            ) -> TypeVar('User'):
         """
         object instantiation
         """

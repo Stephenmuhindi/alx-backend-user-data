@@ -13,8 +13,8 @@ class Auth:
     """ class teacher with cookie """
 
     def require_auth(
-        self, path: str, excluded_paths: List[str]
-    ) -> bool:
+            self, path: str, excluded_paths: List[str]
+            ) -> bool:
         """ test if auth is required """
         if path is None or not excluded_paths:
             return True
